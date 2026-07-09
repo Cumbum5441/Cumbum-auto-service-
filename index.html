@@ -49,7 +49,48 @@ background:#007bff;
 <p>📍 కంభం | అర్ధవీడు | బెస్తవారిపేట</p>
 
 <a class="btn" href="https://wa.me/917989202444">WhatsApp బుక్ చేయండి</a>
+<hr>
 
+<h2>🚖 Book Auto</h2>
+
+<form onsubmit="sendBooking(); return false;">
+<input type="text" id="name" placeholder="Your Name" required
+style="width:90%;padding:12px;margin:8px;border-radius:8px;"><br>
+
+<input type="tel" id="phone" placeholder="Mobile Number" required
+style="width:90%;padding:12px;margin:8px;border-radius:8px;"><br>
+
+<input type="text" id="pickup" placeholder="Pickup Location" required
+style="width:90%;padding:12px;margin:8px;border-radius:8px;"><br>
+
+<input type="text" id="drop" placeholder="Drop Location" required
+style="width:90%;padding:12px;margin:8px;border-radius:8px;"><br>
+
+<button type="submit"
+style="width:90%;padding:15px;background:#ff9800;color:white;
+border:none;border-radius:8px;font-size:18px;">
+🚖 Book Now
+</button>
+</form>
+
+<script>
+function sendBooking(){
+
+var name=document.getElementById("name").value;
+var phone=document.getElementById("phone").value;
+var pickup=document.getElementById("pickup").value;
+var drop=document.getElementById("drop").value;
+
+var msg="🚖 *New Auto Booking*%0A%0A"
++"👤 Name: "+name+"%0A"
++"📞 Phone: "+phone+"%0A"
++"📍 Pickup: "+pickup+"%0A"
++"🏁 Drop: "+drop;
+
+window.open("https://wa.me/917989202444?text="+msg,"_blank");
+
+}
+</script>
 <a class="btn call" href="tel:+917989202444">కాల్ చేయండి</a>
 
 </body>
