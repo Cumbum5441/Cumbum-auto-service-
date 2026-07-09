@@ -129,4 +129,20 @@ window.open("https://wa.me/917989202444?text="+msg,"_blank");
 
 <p style="padding:15px;">
 ℹ️ <b>గమనిక:</b> ఇవి సుమారు ఛార్జీలు మాత్రమే. దూరం, వెయిటింగ్ టైమ్ మరియు రోడ్ పరిస్థితులను బట్టి మారవచ్చు. సాధారణంగా <b>₹10 / కిలోమీటర్</b> నుంచి ఛార్జీ లెక్కించబడుతుంది.
-</p>
+</p><script>
+function calculateFare() {
+    let km = document.getElementById("km").value;
+
+    if(km==""){
+        document.getElementById("result").innerHTML="దయచేసి KM నమోదు చేయండి";
+        return;
+    }
+
+    let totalKm = km * 2;   // Up & Down
+    let fare = totalKm * 10;
+
+    document.getElementById("result").innerHTML =
+    "🚖 మొత్తం దూరం (Up & Down): " + totalKm + " KM<br>" +
+    "💰 సుమారు ఛార్జ్: ₹" + fare;
+}
+</script>
