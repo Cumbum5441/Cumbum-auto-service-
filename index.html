@@ -102,14 +102,6 @@ window.open("https://wa.me/917989202444?text="+msg,"_blank");
 </a><hr>
 <h2>💰 Fare Calculator</h2>
 
-<input type="number" id="km" placeholder="దూరం (KM) నమోదు చేయండి">
-
-<button onclick="calculateFare()">💰 Fare Calculate</button>
-
-<h3 id="result"></h3>
-
-<h2>💰 Fare Calculator</h2>
-
 <input type="number" id="km" placeholder="Distance (KM)"
 style="width:90%;padding:15px;font-size:18px;margin:10px;border-radius:10px;">
 
@@ -117,6 +109,24 @@ style="width:90%;padding:15px;font-size:18px;margin:10px;border-radius:10px;">
 style="width:90%;padding:15px;background:#28a745;color:white;font-size:20px;border:none;border-radius:10px;">
 Calculate Fare
 </button>
+
+<h3 id="result"></h3>
+
+<script>
+function calculateFare() {
+    let km = document.getElementById("km").value;
+
+    if(km==""){
+        document.getElementById("result").innerHTML="Please enter KM";
+        return;
+    }
+
+    let fare = km * 10;
+
+    document.getElementById("result").innerHTML =
+    "🚖 Approx Fare : ₹" + fare;
+}
+</script>
 
 <h3 id="result"></h3>
 
