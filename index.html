@@ -1,181 +1,174 @@
-<h2>సురక్షితమైన వేగవంతమైన ఆటో సర్వీస్</h2>
 
-<div style="text-align:center; margin:20px 0;">
-    <img src="3.png" alt="Cumbum Auto Service" style="width:90%;max-width:400px;border-radius:15px;">
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cumbum Auto Service</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+}
+
+header{
+background:linear-gradient(90deg,#FFD600,#FF9800);
+padding:20px;
+text-align:center;
+color:#000;
+}
+
+header h1{
+font-size:30px;
+}
+
+header p{
+margin-top:8px;
+font-size:18px;
+}
+
+.container{
+width:95%;
+max-width:500px;
+margin:auto;
+padding:15px;
+}
+
+.hero img{
+width:100%;
+border-radius:18px;
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.card{
+background:#fff;
+padding:15px;
+margin-top:15px;
+border-radius:15px;
+box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+
+input{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+}
+
+.btn{
+display:block;
+width:100%;
+padding:15px;
+border:none;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+margin-top:10px;
+cursor:pointer;
+color:white;
+text-decoration:none;
+text-align:center;
+}
+
+.book{
+background:#ff9800;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.call{
+background:#0d6efd;
+}
+
+.location{
+background:#ff5722;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🚖 Cumbum Auto Service</h1>
+<p>24×7 మీ సేవలో</p>
+</header>
+
+<div class="container">
+
+<div class="hero">
+<img src="auto.png" alt="Auto">
 </div>
 
-<p>📍 కంభం | అర్ధవీడు | బెస్తవారిపేట</p>
+<div class="card">
+<h2>🚖 Book Your Auto</h2>
 
-<a class="btn" href="https://wa.me/917989202444">WhatsApp బుక్ చేయండి</a>
-<hr>
+<form onsubmit="sendBooking();return false;">
 
-<!-- HERO BANNER START -->
-<section style="background:#f8f8f8;padding:20px;text-align:center;">
+<input type="text" id="name" placeholder="👤 Your Name" required>
 
-<img src="auto.png"
-style="width:95%;max-width:500px;border-radius:20px;
-box-shadow:0 5px 15px rgba(0,0,0,.25);">
+<input type="tel" id="phone" placeholder="📞 Mobile Number" required>
 
-<h2 style="margin-top:15px;font-size:30px;color:#222;">
-🚖 కంభం ఆటో సర్వీస్
-</h2>
+<input type="text" id="pickup" placeholder="📍 Pickup Location" required>
 
-<p style="font-size:18px;color:#555;">
-24×7 మీ సేవలో
-</p>
+<input type="text" id="drop" placeholder="🏁 Drop Location" required>
 
-<p style="font-size:16px;color:#444;">
-📍 కంభం | అర్ధవీడు | బెస్తవారిపేట | మార్కాపురం
-</p>
-
-<a href="#booking"
-style="display:inline-block;
-margin-top:15px;
-padding:15px 35px;
-background:#FFD600;
-color:#000;
-font-size:20px;
-font-weight:bold;
-text-decoration:none;
-border-radius:12px;">
-🚖 Book Now
-</a>
-
-</section>
-<!-- HERO BANNER END -->
-
-<form onsubmit="sendBooking(); return false;">
-<input type="text" id="name" placeholder="Your Name" required
-style="width:90%;padding:12px;margin:8px;border-radius:8px;"><br>
-
-<input type="tel" id="phone" placeholder="Mobile Number" required
-style="width:90%;padding:12px;margin:8px;border-radius:8px;"><br>
-
-<input type="text" id="pickup" placeholder="Pickup Location" required
-style="width:90%;padding:12px;margin:8px;border-radius:8px;"><br>
-
-<input type="text" id="drop" placeholder="Drop Location" required
-style="width:90%;padding:12px;margin:8px;border-radius:8px;"><br>
-
-<button type="submit"
-style="width:90%;padding:15px;background:#ff9800;color:white;
-border:none;border-radius:8px;font-size:18px;">
-🚖 Book Now
+<button class="btn book" type="submit">
+🚖 Book Auto
 </button>
+
 </form>
+</div><div class="card">
 
-<script>
-function sendBooking(){
-
-var name=document.getElementById("name").value;
-var phone=document.getElementById("phone").value;
-var pickup=document.getElementById("pickup").value;
-var drop=document.getElementById("drop").value;
-
-var msg="🚖 *New Auto Booking*%0A%0A"
-+"👤 Name: "+name+"%0A"
-+"📞 Phone: "+phone+"%0A"
-+"📍 Pickup: "+pickup+"%0A"
-+"🏁 Drop: "+drop;
-    alert("✅ మీ ఆటో బుకింగ్ విజయవంతంగా నమోదైంది!\n\nడ్రైవర్ త్వరలో మీకు కాల్ చేస్తారు.");
-
-window.open("https://wa.me/917989202444?text="+msg,"_blank");
-
-}
-</script>
-<a class="btn call" href="tel:+917989202444">కాల్ చేయండి</a>
-
-</body>
-</html> <a class="btn" style="background:#ff5722;" href="https://maps.app.goo.gl/3hwot1Hh5zUdTYtk9?g_st=ac" target="_blank">
-📍 లొకేషన్ చూడండి
-    
-</a><hr>
 <h2>💰 Fare Calculator</h2>
 
-<input type="number" id="km" placeholder="Distance (KM)"
-style="width:90%;padding:15px;font-size:18px;margin:10px;border-radius:10px;">
+<input type="number" id="km" placeholder="దూరం (KM) నమోదు చేయండి">
 
-<button onclick="calculateFare()"
-style="width:90%;padding:15px;background:#28a745;color:white;font-size:20px;border:none;border-radius:10px;">
-Calculate Fare
+<button class="btn book" onclick="calculateFare()">
+💰 Calculate Fare
 </button>
 
-<h3 id="result"></h3>
+<h3 id="result" style="margin-top:15px;color:#e53935;"></h3>
 
+</div>
+
+<div class="card">
+
+<h2>📍 మా సేవలు</h2>
+
+<p>✅ కంభం</p>
+<p>✅ అర్ధవీడు</p>
+<p>✅ మార్కాపురం</p>
+<p>✅ బెస్తవారిపేట</p>
+
+</div>
+
+<a class="btn whatsapp" href="https://wa.me/917989202444">
+💬 WhatsApp Booking
+</a>
+
+<a class="btn call" href="tel:+917989202444">
+📞 Call Now
+</a>
+
+<a class="btn location"
+href="https://maps.app.goo.gl/3hwot1Hh5zUdTYtk9?g_st=ac"
+target="_blank">
+📍 View Location
+</a>
+
+<br><br>
 <script>
-function calculateFare() {
-    let km = document.getElementById("km").value;
-
-    if(km==""){
-        document.getElementById("result").innerHTML="Please enter KM";
-        return;
-    }
-
-    let fare = km * 10;
-
-    document.getElementById("result").innerHTML =
-    "🚖 Approx Fare : ₹" + fare;
-}
-</script>
-
-<h3 id="result"></h3>
-
-<script>
-function calculateFare() {
-    let km = document.getElementById("km").value;
-
-    if(km==""){
-        document.getElementById("result").innerHTML="Please enter KM";
-        return;
-    }
-
-    let fare = km * 10;
-
-    document.getElementById("result").innerHTML =
-    "🚖 Approx Fare : ₹" + fare;
-}
-</script>
-
-<tr>
-<td style="padding:10px;border:1px solid #ddd;">కంభం ➜ అర్ధవీడు</td>
-<td style="padding:10px;border:1px solid #ddd;">₹600</td>
-</tr>
-
-<tr>
-<td style="padding:10px;border:1px solid #ddd;">కంభం ➜ మార్కాపురం</td>
-<td style="padding:10px;border:1px solid #ddd;">₹600</td>
-</tr>
-
-<tr>
-<td style="padding:10px;border:1px solid #ddd;">కంభం ➜ గిద్దలూరు</td>
-<td style="padding:10px;border:1px solid #ddd;">₹800</td>
-</tr>
-
-<tr>
-<td style="padding:10px;border:1px solid #ddd;">కంభం ➜ బెస్తవారిపేట</td>
-<td style="padding:10px;border:1px solid #ddd;">₹150</td>
-</tr>
-</table>
-
-<p style="padding:15px;">
-ℹ️ <b>గమనిక:</b> ఇవి సుమారు ఛార్జీలు మాత్రమే. దూరం, వెయిటింగ్ టైమ్ మరియు రోడ్ పరిస్థితులను బట్టి మారవచ్చు. సాధారణంగా <b>₹10 / కిలోమీటర్</b> నుంచి ఛార్జీ లెక్కించబడుతుంది.
-</p><script>
-    
-function calculateFare() {
-    let km = document.getElementById("km").value;
-
-    if(km==""){
-        document.getElementById("result").innerHTML="దయచేసి KM నమోదు చేయండి";
-        return;
-    }
-
-    let totalKm = km * 2;   // Up & Down
-    let fare = totalKm * 10;
-
-    document.getElementById("result").innerHTML =
-    "🚖 మొత్తం దూరం (Up & Down): " + totalKm + " KM<br>" +
-    "💰 సుమారు ఛార్జ్: ₹" + fare;
-}<script>
 
 function sendBooking(){
 
@@ -216,6 +209,9 @@ document.getElementById("result").innerHTML=
 
 </script>
 
+</div>
 
+</body>
+</html>
 
 
