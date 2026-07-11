@@ -136,33 +136,9 @@ background:#ff5722;
 
 <button class="btn book" onclick="calculateFare()">
 💰 Calculate Fare
-</button>function getLocation() {
-
-if (navigator.geolocation) {
-
-navigator.geolocation.getCurrentPosition(function(position){
-
-var lat = position.coords.latitude;
-var lng = position.coords.longitude;
-
-window.open(
-"https://www.google.com/maps?q="+lat+","+lng,
-"_blank"
-);
-
-}, function(){
-
+</button>
 alert("లొకేషన్ అనుమతి ఇవ్వండి.");
 
-});
-
-} else {
-
-alert("మీ బ్రౌజర్ GPS సపోర్ట్ చేయడం లేదు.");
-
-}
-
-}
  <button class="btn location" onclick="getLocation()">
 📍 నా లొకేషన్ తీసుకో
  </button>
@@ -235,7 +211,22 @@ document.getElementById("result").innerHTML=
 
 }
 
-</script>
+</script>function getLocation() {
+
+if (navigator.geolocation) {
+
+navigator.geolocation.getCurrentPosition(function(position){
+
+var lat = position.coords.latitude;
+var lng = position.coords.longitude;
+
+window.open(
+"https://www.google.com/maps?q="+lat+","+lng,
+"_blank"
+);
+
+}, function(){
+
 
 </div>
 
