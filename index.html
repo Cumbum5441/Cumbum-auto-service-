@@ -191,4 +191,48 @@ function calculateFare() {
     document.getElementById("result").innerHTML =
     "🚖 మొత్తం దూరం (Up & Down): " + totalKm + " KM<br>" +
     "💰 సుమారు ఛార్జ్: ₹" + fare;
+}<script>
+
+function sendBooking(){
+
+var name=document.getElementById("name").value;
+var phone=document.getElementById("phone").value;
+var pickup=document.getElementById("pickup").value;
+var drop=document.getElementById("drop").value;
+
+var msg=
+"🚖 *New Auto Booking*%0A%0A"+
+"👤 Name: "+name+"%0A"+
+"📞 Phone: "+phone+"%0A"+
+"📍 Pickup: "+pickup+"%0A"+
+"🏁 Drop: "+drop;
+
+alert("✅ మీ బుకింగ్ విజయవంతంగా నమోదైంది!");
+
+window.open("https://wa.me/917989202444?text="+msg,"_blank");
+
 }
+
+function calculateFare(){
+
+var km=document.getElementById("km").value;
+
+if(km==""){
+document.getElementById("result").innerHTML="⚠️ దయచేసి KM నమోదు చేయండి";
+return;
+}
+
+var totalKm=km*2;
+var fare=totalKm*10;
+
+document.getElementById("result").innerHTML=
+"🚖 మొత్తం దూరం (Up & Down): "+totalKm+" KM<br><br>💰 సుమారు ఛార్జీ: ₹"+fare;
+
+}
+
+</script>
+
+</div>
+
+</body>
+</html>
