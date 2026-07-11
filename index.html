@@ -208,7 +208,26 @@ document.getElementById("result").innerHTML=
 "🚖 మొత్తం దూరం (Up & Down): "+totalKm+" KM<br><br>💰 సుమారు ఛార్జీ: ₹"+fare;
 
 }
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
 
+      var lat = position.coords.latitude;
+      var lng = position.coords.longitude;
+
+      window.open(
+        "https://www.google.com/maps?q=" + lat + "," + lng,
+        "_blank"
+      );
+
+    }, function() {
+      alert("లోకేషన్ అనుమతి ఇవ్వండి.");
+    });
+
+  } else {
+    alert("మీ బ్రౌజర్ GPS సపోర్ట్ చేయదు.");
+  }
+}
 </script>
 
 
