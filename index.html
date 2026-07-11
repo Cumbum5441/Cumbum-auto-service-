@@ -136,8 +136,6 @@ background:#ff5722;
 
 <button class="btn book" onclick="calculateFare()">
 💰 Calculate Fare
-</button>
-alert("లొకేషన్ అనుమతి ఇవ్వండి.");
 
  <button class="btn location" onclick="getLocation()">
 📍 నా లొకేషన్ తీసుకో
@@ -211,21 +209,7 @@ document.getElementById("result").innerHTML=
 
 }
 
-</script>function getLocation() {
-
-if (navigator.geolocation) {
-
-navigator.geolocation.getCurrentPosition(function(position){
-
-var lat = position.coords.latitude;
-var lng = position.coords.longitude;
-
-window.open(
-"https://www.google.com/maps?q="+lat+","+lng,
-"_blank"
-);
-
-}, function(){
+</script>
 
 
 </div>
