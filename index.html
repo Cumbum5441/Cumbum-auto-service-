@@ -275,7 +275,52 @@ function getLocation() {
 <p>© 2026 All Rights Reserved</p>
 
 </footer>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import {
+  getDatabase,
+  ref,
+  push
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
 
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  databaseURL: "https://YOUR_PROJECT-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+window.sendBooking = function () {
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const pickup = document.getElementById("pickup").value;
+  const drop = document.getElementById("drop").value;
+
+  push(ref(db, "bookings"), {
+    name,
+    phone,
+    pickup,
+    drop,
+    time: new Date().toLocaleString()
+  });
+
+  alert("✅ Booking Saved Successfully!");
+
+  const msg =
+    `🚖 New Auto Booking\n\n👤 ${name}\n📞 ${phone}\n📍 ${pickup}\n🏁 ${drop}`;
+
+  window.open(
+    "https://wa.me/917989202444?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
+};
+</script>
 </body>
 </html>
 
