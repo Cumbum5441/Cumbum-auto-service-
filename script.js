@@ -6,18 +6,35 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
     let pickup = document.getElementById("pickup").value;
     let drop = document.getElementById("drop").value;
 
-    let message =
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+
+            let lat = position.coords.latitude;
+            let lon = position.coords.longitude;
+
+            let locationLink = `https://maps.google.com/?q=${lat},${lon}`;
+
+            let message =
 `🚖 *New Auto Booking*
 
 👤 Name: ${name}
 📞 Mobile: ${mobile}
 📍 Pickup: ${pickup}
-🏁 Drop: ${drop}`;
+🏁 Drop: ${drop}
 
-    let whatsappNumber = "917989202444";
+📌 Live Location:
+${locationLink}`;
 
-    let whatsappURL =
-        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(
+                `https://wa.me/917989202444?text=${encodeURIComponent(message)}`,
+                "_blank"
+            );
 
-    window.open(whatsappURL, "_blank");
+        }, function() {
+            alert("Location permission denied.");
+        });
+
+    } else {
+        alert("Geolocation is not supported.");
+    }
 });
