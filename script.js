@@ -31,7 +31,7 @@ firebase.database().ref("bookings").push({
     drop: drop,
     location: locationLink,
     status: "Pending",
-    createdAt: Date.now()
+    createdAt: Date.now(),
     driverId: ""
 });
             window.open(
