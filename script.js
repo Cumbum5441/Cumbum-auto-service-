@@ -24,7 +24,15 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
 
 📌 Live Location:
 ${locationLink}`;
-
+firebase.database().ref("bookings").push({
+    name: name,
+    mobile: mobile,
+    pickup: pickup,
+    drop: drop,
+    location: locationLink,
+    status: "Pending",
+    createdAt: Date.now()
+});
             window.open(
                 `https://wa.me/917989202444?text=${encodeURIComponent(message)}`,
                 "_blank"
