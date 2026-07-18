@@ -75,3 +75,26 @@ function rejectDriver(id) {
 
   alert("Driver Rejected ❌");
 }
+firebase.database().ref("bookings").on("value", (snapshot) => {
+
+    let bookings = snapshot.val();
+    let html = "";
+
+    for (let id in bookings) {
+
+        html += `
+        <div class="card">
+            <h3>${bookings[id].name}</h3>
+            <p>📞 ${bookings[id].mobile}</p>
+            <p>📍 ${bookings[id].pickup}</p>
+            <p>🏁 ${bookings[id].drop}</p>
+            <a href="${bookings[id].location}" target="_blank">
+            📍 Live Location
+            </a>
+        </div>
+        `;
+    }
+
+    document.getElementById("todayBookings").innerHTML = html;
+
+});
