@@ -79,22 +79,42 @@ firebase.database().ref("bookings").on("value", (snapshot) => {
 
     let bookings = snapshot.val();
     let html = "";
+    let totalBookings = 0;
 
-    for (let id in bookings) {
+    if (bookings) {
 
-        html += `
-        <div class="card">
-            <h3>${bookings[id].name}</h3>
-            <p>📞 ${bookings[id].mobile}</p>
-            <p>📍 ${bookings[id].pickup}</p>
-            <p>🏁 ${bookings[id].drop}</p>
-            <a href="${bookings[id].location}" target="_blank">
-            📍 Live Location
-            </a>
-        </div>
-        `;
+        for (let id in bookings) {
+
+            totalBookings++;
+
+            html += `
+            <div class="card">
+                <h3>${bookings[id].name}</h3>
+
+                <p>📞 ${bookings[id].mobile}</p>
+
+                <p>📍 Pickup: ${bookings[id].pickup}</p>
+
+                <p>🏁 Drop: ${bookings[id].drop}</p>
+
+                <p>
+                    <a href="${bookings[id].location}" target="_blank">
+                        📍 Live Location
+                    </a>
+                </p>
+
+                <hr>
+            </div>
+            `;
+        }
+
+    } else {
+
+        html = "<p>No Bookings Yet.</p>";
+
     }
 
     document.getElementById("todayBookings").innerHTML = html;
+    document.getElementById("totalBookings").textContent = totalBookings;
 
 });
