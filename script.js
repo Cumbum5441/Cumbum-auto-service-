@@ -32,6 +32,7 @@ firebase.database().ref("bookings").push({
     location: locationLink,
     status: "Pending",
     createdAt: Date.now()
+    driverId: ""
 });
             window.open(
                 `https://wa.me/917989202444?text=${encodeURIComponent(message)}`,
