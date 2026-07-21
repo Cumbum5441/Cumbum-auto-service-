@@ -39,3 +39,28 @@ firebase.database().ref("bookings").on("value", function(snapshot){
     document.getElementById("rideList").innerHTML = html || "<p>No Ride Assigned.</p>";
 
 });
+function acceptRide(id){
+
+    firebase.database().ref("bookings/" + id).update({
+        status: "Accepted"
+    });
+
+    firebase.database().ref("drivers/" + driverId).update({
+        status: "Busy"
+    });
+
+    alert("Ride Accepted ✅");
+}
+
+function completeRide(id){
+
+    firebase.database().ref("bookings/" + id).update({
+        status: "Completed"
+    });
+
+    firebase.database().ref("drivers/" + driverId).update({
+        status: "Available"
+    });
+
+    alert("Ride Completed 🎉");
+}
