@@ -49,7 +49,7 @@ firebase.database().ref("bookings").push({
     location: locationLink,
     status: "Pending",
     createdAt: Date.now(),
-    driverId: ""driverId: assignedDriver
+    driverId: assignedDriver
 });
 });
             window.open(
