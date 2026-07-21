@@ -11,9 +11,13 @@ document.getElementById("driverLoginForm").addEventListener("submit", function(e
 
         for(let id in drivers){
 
-            if(drivers[id].mobile === mobile && drivers[id].status === "Available"){
+            if(drivers[id].mobile === mob
 
-                found = true;
+                if(
+    drivers[id].mobile === mobile &&
+    drivers[id].approved === true &&
+    drivers[id].status === "Available"
+){
 
                 localStorage.setItem("driverId", id);
 
