@@ -22,15 +22,19 @@ firebase.database().ref("bookings").on("value", function(snapshot){
 
     for(let id in bookings){
 
+    if(bookings[id].driverId === driverId){
+
         html += `
         <div class="card">
             <h3>${bookings[id].name}</h3>
             <p>📞 ${bookings[id].mobile}</p>
             <p>📍 ${bookings[id].pickup}</p>
             <p>🏁 ${bookings[id].drop}</p>
+            <p>📌 Status: ${bookings[id].status}</p>
         </div>
         `;
     }
+}
 
     document.getElementById("rideList").innerHTML = html || "<p>No Ride Assigned.</p>";
 
