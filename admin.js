@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function approveDriver(id) {
   firebase.database().ref("drivers/" + id).update({
+    approved: true,
     status: "Available"
   });
 
