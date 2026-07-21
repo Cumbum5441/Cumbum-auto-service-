@@ -24,6 +24,23 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
 
 📌 Live Location:
 ${locationLink}`;
+            let assignedDriver = "";
+
+firebase.database().ref("drivers").once("value", function(snapshot){
+
+    let drivers = snapshot.val();
+
+    for(let id in drivers){
+
+        if(
+            drivers[id].approved === true &&
+            drivers[id].status === "Available"
+        ){
+            assignedDriver = id;
+            break;
+        }
+
+    }
 firebase.database().ref("bookings").push({
     name: name,
     mobile: mobile,
@@ -32,7 +49,8 @@ firebase.database().ref("bookings").push({
     location: locationLink,
     status: "Pending",
     createdAt: Date.now(),
-    driverId: ""
+    driverId: ""driverId: assignedDriver
+});
 });
             window.open(
                 `https://wa.me/917989202444?text=${encodeURIComponent(message)}`,
