@@ -25,14 +25,22 @@ firebase.database().ref("bookings").on("value", function(snapshot){
     if(bookings[id].driverId === driverId){
 
         html += `
-        <div class="card">
-            <h3>${bookings[id].name}</h3>
-            <p>📞 ${bookings[id].mobile}</p>
-            <p>📍 ${bookings[id].pickup}</p>
-            <p>🏁 ${bookings[id].drop}</p>
-            <p>📌 Status: ${bookings[id].status}</p>
-        </div>
-        `;
+<div class="card">
+    <h3>${bookings[id].name}</h3>
+    <p>📞 ${bookings[id].mobile}</p>
+    <p>📍 ${bookings[id].pickup}</p>
+    <p>🏁 ${bookings[id].drop}</p>
+    <p>📌 Status: ${bookings[id].status}</p>
+
+    <button onclick="acceptRide('${id}')">
+        ✅ Accept Ride
+    </button>
+
+    <button onclick="completeRide('${id}')">
+        🏁 Complete Ride
+    </button>
+</div>
+`;
     }
 }
 
